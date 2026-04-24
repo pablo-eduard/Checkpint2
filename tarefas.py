@@ -26,7 +26,7 @@ def concluir_tarefa(indice):
     try:
         posicao=indice-1
 
-        lista_tarefas[posicao]["descrição"]=True
+        lista_tarefas[posicao]["concluida"]=True
         print("Tarefa marcada como feita!") 
         time.sleep(2)
         os.system('cls')
