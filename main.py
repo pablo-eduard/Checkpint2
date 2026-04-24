@@ -1,20 +1,37 @@
 import os
 import time
+from tarefas import adicionar_tarefas, listar_tarefas, concluir_tarefa, carregar_dados
 
 
-def menu_inicial():
-    print("-----------Lista da Tarefas-----------")
-    print("Opção Disponivéis: ")
-    print("1) Criar nova tarefa.")
-    print("2) Ver tarefas.")
-    print("3) Atualizar tarefa.")
-    print("4) Deletar tarefa.")
-    print("-----------Por Pablo Éduard-----------")
+tempo= 2
+carregar_dados()
 
-    opcao=int(input("Escolha uma opção: "))
-    return opcao
+while True:
+    
+    print("------Bem Vindo a Lista de Tarefas------")
+    print("1)Adicionar")
+    print("2)Listar")
+    print("3)Concluir")
+    print("4)Sair")
 
-def escolher_opcao(opcao):
+    opcao=input("Digite uma opção valida: ")
+    
     match opcao:
-        case 1:
-        adicionar_tarefa=str(input("O que você gostaria de adicionar com tarefa? "))
+        case "1":
+            tarefa = input("Qual a nova tarefa? ")
+            adicionar_tarefas(tarefa)
+            print("Tarefa adicionada✅")
+            time.sleep(tempo)
+            os.system('cls')
+        
+        case "2":
+            listar_tarefas()
+            time.sleep(tempo)
+            os.system('cls')
+        case "3":
+            numero=int(input("Digite um número dá Tarefa: "))
+            concluir_tarefa(numero)
+        case "4":
+            print("Desligando sistema")
+            break
+
