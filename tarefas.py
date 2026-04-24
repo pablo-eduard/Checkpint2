@@ -16,7 +16,7 @@ def adicionar_tarefas(descricao):
 
 def listar_tarefas():
     for i, tarefa in enumerate(lista_tarefas):
-        if tarefa["concluida"]=True:
+        if tarefa["concluida"]==True:
             simbolo="[X]"
         else:
             simbolo="[]"
